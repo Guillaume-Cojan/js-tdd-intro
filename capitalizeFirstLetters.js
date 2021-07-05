@@ -1,9 +1,10 @@
-function capitalizeFirstLetters(input) {
-    const words = input.split(" ");
-    for (let i = 0; i < words.length; i++) {
-        words[i] = words[i][0].toUpperCase() + words[i].substr(1);
-    }
-    return words.join(" ");
-}
+const capitalizeFirstLetters = (str) => {
+    return str.length > 0
+        ? str
+              .split(" ")
+              .map((word) => word[0].toUpperCase() + word.slice(1))
+              .join(" ")
+        : "";
+};
 
 module.exports = capitalizeFirstLetters;
