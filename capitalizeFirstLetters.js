@@ -23,5 +23,3 @@ assert.strictEqual(capitalizeFirst("learning"), "Learning");
 
 // Check that it works for an empty string
 assert.strictEqual(capitalizeFirst(""), "");
-
-capitalizeFirst()
