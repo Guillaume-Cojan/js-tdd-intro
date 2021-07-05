@@ -1,20 +1,28 @@
 const assert = require("assert");
 const capitalizeFirstLetters = require("../capitalizeFirstLetters");
 
-// Check that capitalizeFirstLetters is a function
-assert.strictEqual(typeof capitalizeFirstLetters, "function");
+describe("capitalizeFirstLetters", () => {
+    it("is a function accepting one argument", () => {
+        assert.strictEqual(typeof capitalizeFirstLetters, "function");
+        assert.strictEqual(capitalizeFirstLetters.length, 1);
+    });
 
-// Check that capitalizeFirstLetters accepts one argument
-assert.strictEqual(capitalizeFirstLetters.length, 1);
+    it("is accepting an empty string", () => {
+        assert.strictEqual(capitalizeFirstLetters(""), "");
+    });
 
-// Check that capitalizeFirstLetters transforms a multiple word phrase
-assert.strictEqual(
-    capitalizeFirstLetters("i am learning TDD"),
-    "I Am Learning TDD"
-);
+    it("is accepting one letter", () => {
+        assert.strictEqual(capitalizeFirstLetters("a"), "A");
+    });
 
-// Check that it works for a 1-word string
-assert.strictEqual(capitalizeFirstLetters("russia"), "Russia");
+    it("is accepting one word", () => {
+        assert.strictEqual(capitalizeFirstLetters("russia"), "Russia");
+    });
 
-// Check that it works for an empty string
-assert.strictEqual(capitalizeFirstLetters(""), "");
+    it("transform a string correctly", () => {
+        assert.strictEqual(
+            capitalizeFirstLetters("i am learning TDD"),
+            "I Am Learning TDD"
+        );
+    });
+});
